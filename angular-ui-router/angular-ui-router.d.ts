@@ -13,6 +13,15 @@ declare module 'angular-ui-router' {
 
 declare module angular.ui {
 
+    interface ICurrentStateUiNavigationConfig {
+        hiding: boolean;
+        transparent: boolean;
+    }
+
+    interface ICurrentStateUiConfig {
+        navigation?: ICurrentStateUiNavigationConfig;
+    }
+
     interface IState {
         name?: string;
         /**
@@ -36,13 +45,13 @@ declare module angular.ui {
          * Function (injectable), returns the actual controller function or string.
          */
         controllerProvider?: Function;
-        
+
         /**
          * Specifies the parent state of this state
          */
         parent?: string | IState
-        
-        
+
+
         resolve?: {};
         /**
          * A url with optional parameters. When a state is navigated or transitioned to, the $stateParams service will be populated with any parameters that were passed.
@@ -75,6 +84,10 @@ declare module angular.ui {
          * Boolean (default true). If false will not re-trigger the same state just because a search/query parameter has changed. Useful for when you'd like to modify $location.search() without triggering a reload.
          */
         reloadOnSearch?: boolean;
+        /**
+         * Our custom uiConfig Object containing UI settings
+         */
+        uiConfig?: ICurrentStateUiConfig;
     }
 
     interface IStateProvider extends angular.IServiceProvider {
@@ -174,10 +187,10 @@ declare module angular.ui {
         current: IState;
         params: IStateParamsService;
         reload(): void;
-        
+
         $current: IResolvedState;
     }
-    
+
     interface IResolvedState {
         locals: {
             /**
