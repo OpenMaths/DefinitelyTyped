@@ -1,2 +1,0 @@
-git remote add upstream git@github.com:borisyankov/DefinitelyTyped.git
-git remote add bitbucket git@bitbucket.org:openmaths/DefinitelyTyped.git
