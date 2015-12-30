@@ -1157,7 +1157,7 @@ interface JQuery {
      *
      * @param boolean
      */
-    perfectScrollbar({suppressScrollX: boolean}): void;
+    perfectScrollbar(params:any): void;
     /**
      * Register a handler to be called when Ajax requests complete. This is an AjaxEvent.
      *
