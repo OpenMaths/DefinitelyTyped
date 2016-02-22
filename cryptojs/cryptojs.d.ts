@@ -467,3 +467,8 @@ declare module CryptoJS{
         PBKDF2: CryptoJS.algo.IEvpKDFHelper //PBKDF2 is same as EvpKDF
     }
 }
+
+declare module 'crypto-js' {
+    import lib = CryptoJS;
+    export = lib;
+}
