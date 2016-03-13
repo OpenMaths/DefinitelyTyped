@@ -636,7 +636,7 @@ declare module Electron {
 		 * Evaluates code in page.
 		 * @param code Code to evaluate.
 		 */
-		executeJavaScript(code: string): void;
+		executeJavaScript(code: string, userGesture?: boolean, callback?: (result: any) => void): void;
 		/**
 		 * Executes Edit -> Undo command in page.
 		 */
@@ -1186,6 +1186,11 @@ declare module Electron {
 		 * before using this API
 		 */
 		checkForUpdates(): any;
+		/**
+		 * Restarts the app and installs the update after it has been downloaded.
+		 * It should only be called after update-downloaded has been emitted.
+		 */
+		 quitAndInstall(): void;
 	}
 
 	module Dialog {
@@ -1537,6 +1542,10 @@ declare module Electron {
 		 */
 		getCurrentWindow(): BrowserWindow;
 		/**
+		 * @returns The WebContents object of this web page.
+		 */
+		getCurrentWebContents(): WebContents;
+		/**
 		 * @returns The global variable of name (e.g. global[name]) in the main process.
 		 */
 		getGlobal(name: string): any;
@@ -1592,7 +1601,7 @@ declare module Electron {
  		 * invoked by a gesture from the user. Setting `userGesture` to `true` will remove
  		 * this limitation.
 		 */
-		executeJavaScript(code: string, userGesture?: boolean): void;
+		executeJavaScript(code: string, userGesture?: boolean, callback?: (result: any) => void): void;
 	}
 
 	// Type definitions for main process
