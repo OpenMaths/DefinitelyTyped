@@ -5,7 +5,7 @@
 
 /// <reference path="../react/react.d.ts"/>
 
-declare module FixedDataTable {    
+declare namespace FixedDataTable {
     export var version: string;
 
     export interface TableProps extends __React.Props<Table> {
@@ -387,16 +387,13 @@ declare module FixedDataTable {
     }
 
     export class Table extends __React.Component<TableProps, {}> {
-         render(): __React.DOMElement<any>
     }
     export class Column extends __React.Component<ColumnProps, {}> {
-         render(): __React.DOMElement<any>
     }
     export class ColumnGroup extends __React.Component<ColumnGroupProps, {}> {
-         render(): __React.DOMElement<any>
     }
 }
 
-declare module "fixed-data-table" {    
+declare module "fixed-data-table" {
     export = FixedDataTable;
 }

@@ -5,14 +5,14 @@
 
 /// <reference path="xrm.d.ts" />
 
-declare module Xrm.Page
+declare namespace Xrm.Page
 {
     /**
      * Interface for Parature's knowledge base search control.
      *
      * @sa  Control
      */
-    export interface KbSearchControl extends Control
+    export interface KbSearchControl extends Xrm.Page.Control
     {
         /**
          * Use this method to add an event handler to the OnResultOpened event.

@@ -4,7 +4,7 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 /// <reference path="../react/react.d.ts"/>
-declare module reactInputCalendar {
+declare namespace reactInputCalendar {
     export interface ReactInputCalendarProps {
         /**
         * Format of date, which display in input and set in date property.
@@ -76,7 +76,6 @@ declare module reactInputCalendar {
     }
     interface ReactInputCalendarState { }
     export class ReactInputCalendar extends __React.Component<ReactInputCalendarProps, ReactInputCalendarState> {
-        render(): __React.DOMElement<any>;
     }
 }
 declare var ReactInputCalendar: typeof reactInputCalendar.ReactInputCalendar

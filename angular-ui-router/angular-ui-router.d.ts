@@ -28,7 +28,7 @@ declare module 'angular-ui-router' {
     export type IType = angular.ui.IType;
 }
 
-declare module angular.ui {
+declare namespace angular.ui {
 
     interface ICurrentStateUiNavigationConfig {
         hiding: boolean;
@@ -104,11 +104,14 @@ declare module angular.ui {
          */
         reloadOnSearch?: boolean;
 
+<<<<<<< HEAD
         /**
          * Our custom uiConfig Object containing UI settings
          */
         uiConfig?: ICurrentStateUiConfig;
 
+=======
+>>>>>>> upstream/master
         /**
          * Boolean (default true). If false will reload state on everytransitions. Useful for when you'd like to restore all data  to its initial state.
          */
